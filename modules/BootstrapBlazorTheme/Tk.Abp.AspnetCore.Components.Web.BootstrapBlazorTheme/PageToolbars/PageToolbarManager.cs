@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
@@ -7,10 +8,9 @@ namespace Tk.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme.PageToolbars;
 
 public class PageToolbarManager : IPageToolbarManager, ITransientDependency
 {
-    protected IHybridServiceScopeFactory ServiceScopeFactory { get; }
+    protected IServiceScopeFactory ServiceScopeFactory { get; }
 
-    public PageToolbarManager(
-        IHybridServiceScopeFactory serviceScopeFactory)
+    public PageToolbarManager(IServiceScopeFactory serviceScopeFactory)
     {
         ServiceScopeFactory = serviceScopeFactory;
     }

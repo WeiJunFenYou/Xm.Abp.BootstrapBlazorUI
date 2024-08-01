@@ -67,7 +67,10 @@ public class BootstrapBlazorSettingDefultPageContributor : ISettingComponentCont
 
         var featureCheck = context.ServiceProvider.GetRequiredService<IFeatureChecker>();
 
-        return await featureCheck.IsEnabledAsync(SettingManagementFeatures.AllowTenantsToChangeEmailSettings);
+        return await featureCheck.IsEnabledAsync(SettingManagementFeatures.AllowChangingEmailSettings);
+
+        // Todo 这里的注释要删掉
+        //return await featureCheck.IsEnabledAsync(SettingManagementFeatures.AllowTenantsToChangeEmailSettings);
 
     }
 }

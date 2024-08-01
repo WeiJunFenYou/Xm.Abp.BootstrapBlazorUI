@@ -4,7 +4,7 @@
 @inherits LayoutComponentBase
 @inject IOptions<AbpRouterOptions> RouterOptions
 
-<AbpLayout SideWidth="0" IsPage="true" IsFullSide="false" IsFixedHeader="true"
+<Layout SideWidth="0" IsPage="true" IsFullSide="false" IsFixedHeader="true"
            ShowCollapseBar="false" OnCollapsed="collapsed => OnCollapse(collapsed)"
            AdditionalAssemblies="RouterOptions.Value.AdditionalAssemblies"
            class="@LayoutClassString">
@@ -28,7 +28,7 @@
     <Main>
         @Body
     </Main>
-</AbpLayout>
+</Layout>
 
 <HeadContent>
     @if (Theme == BootstrapBlazorThemes.Metronic)

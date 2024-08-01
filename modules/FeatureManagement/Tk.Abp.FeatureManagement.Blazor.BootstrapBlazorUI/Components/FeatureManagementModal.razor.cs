@@ -193,7 +193,11 @@ public partial class FeatureManagementModal
 
     protected virtual IStringLocalizer CreateStringLocalizer(string resourceName)
     {
-        var resource = LocalizationOptions.Value.Resources.Values.FirstOrDefault(x => x.ResourceName == resourceName);
-        return HtmlLocalizerFactory.Create(resource != null ? resource.ResourceType : LocalizationOptions.Value.DefaultResourceType);
+        //Todo 这里的注释要删掉
+        //var resource = LocalizationOptions.Value.Resources.Values.FirstOrDefault(x => x.ResourceName == resourceName);
+        //return HtmlLocalizerFactory.Create(resource != null ? resource.ResourceType : LocalizationOptions.Value.DefaultResourceType);
+
+        return StringLocalizerFactory.CreateByResourceNameOrNull(resourceName) ??
+       StringLocalizerFactory.CreateDefaultOrNull();
     }
 }
