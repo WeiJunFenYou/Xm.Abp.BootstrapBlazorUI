@@ -1,16 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>BookStore</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\BookStore.Domain.Shared\BookStore.Domain.Shared.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="5.2.2" />
     <PackageReference Include="Volo.Abp.Identity.Domain" Version="5.2.2" />
@@ -23,5 +19,4 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="5.2.2" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="5.2.2" />
   </ItemGroup>
-
 </Project>
