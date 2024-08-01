@@ -20,7 +20,7 @@
                     @foreach (var group in _groups)
                     {
                         var selectAllInThisTab = group.Permissions.All(x => x.IsGranted);
-                        <TabItem Key="@GetNormalizedGroupName(group.Name)" Text="@group.DisplayName">
+                        <TabItem Text="@group.DisplayName">
                             <h4>@group.DisplayName</h4>
                             <Divider/>
                             <Checkbox

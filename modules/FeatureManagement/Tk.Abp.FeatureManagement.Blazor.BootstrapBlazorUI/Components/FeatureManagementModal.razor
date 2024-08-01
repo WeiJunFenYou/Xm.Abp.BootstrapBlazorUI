@@ -19,7 +19,7 @@
                 <Tab Placement="@Placement.Left">
                     @foreach (var group in Groups)
                     {
-                        <TabItem Key="@GetNormalizedGroupName(group.Name)" Text="@group.DisplayName">
+                        <TabItem Text="@group.DisplayName">
                             <h4>@group.DisplayName</h4>
                             <Divider/>
 

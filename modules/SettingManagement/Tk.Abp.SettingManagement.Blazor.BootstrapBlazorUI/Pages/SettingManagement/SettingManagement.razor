@@ -14,7 +14,7 @@
         <Tab ActiveKey="@SelectedGroup" Placement="@Placement.Left">
             @foreach (var group in SettingComponentCreationContext.Groups)
             {
-                <TabItem Key="@GetNormalizedString(group.Id)" Text="@group.DisplayName">
+                <TabItem Text="@group.DisplayName">
                     <h4>@group.DisplayName</h4>
                     <Divider/>
 
