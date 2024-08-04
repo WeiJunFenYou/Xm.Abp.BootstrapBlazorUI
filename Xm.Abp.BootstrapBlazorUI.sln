@@ -69,6 +69,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xm.Abp.AspnetCore.Component
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.BlazorServer", "samples\BookStore\src\BookStore.BlazorServer\BookStore.BlazorServer.csproj", "{9678E9C6-BA54-4B11-866C-93324FA08B46}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Account", "Account", "{00D9210E-D4E1-4FA6-BD7A-A2CA2D411440}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xm.Abp.Account.Web", "modules\Account\Xm.Abp.Account.Web\Xm.Abp.Account.Web.csproj", "{12D46970-6B72-46AF-BB18-177CDB9EC4B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xm.Abp.Account.Web.IdentityServer", "modules\Account\Xm.Abp.Account.Web.IdentityServer\Xm.Abp.Account.Web.IdentityServer.csproj", "{89F0A76B-F6FB-443D-A169-CC07486E86AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xm.Abp.Account.Web.OpenIddict", "modules\Account\Xm.Abp.Account.Web.OpenIddict\Xm.Abp.Account.Web.OpenIddict.csproj", "{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +175,18 @@ Global
 		{9678E9C6-BA54-4B11-866C-93324FA08B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9678E9C6-BA54-4B11-866C-93324FA08B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9678E9C6-BA54-4B11-866C-93324FA08B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D46970-6B72-46AF-BB18-177CDB9EC4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D46970-6B72-46AF-BB18-177CDB9EC4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D46970-6B72-46AF-BB18-177CDB9EC4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D46970-6B72-46AF-BB18-177CDB9EC4B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F0A76B-F6FB-443D-A169-CC07486E86AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F0A76B-F6FB-443D-A169-CC07486E86AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F0A76B-F6FB-443D-A169-CC07486E86AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F0A76B-F6FB-443D-A169-CC07486E86AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -202,6 +222,10 @@ Global
 		{04E406C8-8E9E-47A9-B6EE-7FD32E342A8A} = {9F013513-EC16-46DF-BDEF-C9B5F0DA6C12}
 		{61156C3E-96B0-4868-8280-480521326F81} = {9F013513-EC16-46DF-BDEF-C9B5F0DA6C12}
 		{9678E9C6-BA54-4B11-866C-93324FA08B46} = {1F85F600-70F9-4286-B8BD-6A124D9DC43D}
+		{00D9210E-D4E1-4FA6-BD7A-A2CA2D411440} = {0C432416-770F-4331-84E6-5835408A9BD8}
+		{12D46970-6B72-46AF-BB18-177CDB9EC4B7} = {00D9210E-D4E1-4FA6-BD7A-A2CA2D411440}
+		{89F0A76B-F6FB-443D-A169-CC07486E86AC} = {00D9210E-D4E1-4FA6-BD7A-A2CA2D411440}
+		{B8AD9969-88C7-4D4B-9A3A-B2B7185CA31B} = {00D9210E-D4E1-4FA6-BD7A-A2CA2D411440}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D287E0F-FEE7-4D1E-A5C0-2FEB78E717CB}
