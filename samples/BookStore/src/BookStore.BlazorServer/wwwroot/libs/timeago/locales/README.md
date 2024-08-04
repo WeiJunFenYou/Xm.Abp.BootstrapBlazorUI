@@ -1,4 +1,4 @@
-# Locale override examples for timeago
+﻿# Locale override examples for timeago
 
 You can represent time statements in most western languages where
 a prefix and/or suffix is used.

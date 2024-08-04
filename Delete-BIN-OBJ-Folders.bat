@@ -1,4 +1,4 @@
-@ECHO off
+﻿@ECHO off
 cls
 
 ECHO Deleting all BIN and OBJ folders...

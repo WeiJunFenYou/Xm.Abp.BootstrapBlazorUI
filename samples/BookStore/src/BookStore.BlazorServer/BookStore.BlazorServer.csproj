@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -13,10 +13,10 @@
     <PackageReference Include="Serilog.Sinks.Async" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\modules\IdentityManagement\Tk.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI\Tk.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
-    <ProjectReference Include="..\..\..\..\modules\BootstrapBlazorTheme\Tk.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme\Tk.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme.csproj" />
-    <ProjectReference Include="..\..\..\..\modules\SettingManagement\Tk.Abp.SettingManagement.Blazor.Server.BootstrapBlazorUI\Tk.Abp.SettingManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
-    <ProjectReference Include="..\..\..\..\modules\TenantManagement\Tk.Abp.TenantManagement.Blazor.Server.BootstrapBlazorUI\Tk.Abp.TenantManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\IdentityManagement\Xm.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI\Xm.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\BootstrapBlazorTheme\Xm.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme\Xm.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\SettingManagement\Xm.Abp.SettingManagement.Blazor.Server.BootstrapBlazorUI\Xm.Abp.SettingManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\TenantManagement\Xm.Abp.TenantManagement.Blazor.Server.BootstrapBlazorUI\Xm.Abp.TenantManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
     <ProjectReference Include="..\..\src\BookStore.Application\BookStore.Application.csproj" />
     <ProjectReference Include="..\..\src\BookStore.HttpApi\BookStore.HttpApi.csproj" />
     <ProjectReference Include="..\..\src\BookStore.EntityFrameworkCore\BookStore.EntityFrameworkCore.csproj" />

@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using BookStore.Localization;
 using BookStore.MultiTenancy;
-using Tk.Abp.IdentityManagement.Blazor.BootstrapBlazorUI;
-using Tk.Abp.SettingManagement.Blazor.BootstrapBlazorUI;
-using Tk.Abp.TenantManagement.Blazor.BootstrapBlazorUI;
+using Xm.Abp.IdentityManagement.Blazor.BootstrapBlazorUI;
+using Xm.Abp.SettingManagement.Blazor.BootstrapBlazorUI;
+using Xm.Abp.TenantManagement.Blazor.BootstrapBlazorUI;
 using Volo.Abp.UI.Navigation;
 
 namespace BookStore.Blazor.Menus;

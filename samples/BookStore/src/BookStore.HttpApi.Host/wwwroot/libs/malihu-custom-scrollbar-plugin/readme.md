@@ -1,4 +1,4 @@
-malihu custom scrollbar plugin
+﻿malihu custom scrollbar plugin
 ================================
 
 Highly customizable custom scrollbar jQuery plugin ([Demo](http://manos.malihu.gr/repository/custom-scrollbar/demo/examples/complete_examples.html)). Features include: 
