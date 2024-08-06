@@ -1,15 +1,18 @@
-﻿//using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-//namespace Xm.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme.Themes.BootstrapBlazorTheme;
+namespace Xm.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme.Themes.BootstrapBlazorTheme;
 
-//public class AbpLayout: BootstrapBlazor.Components.Layout
-//{
-//    //protected override async Task OnInitializedAsync()
-//    //{
-//    //    //await base.OnInitializedAsync();
+/// <summary>
+/// 自定义布局
+/// </summary>
+public class AbpLayout : BootstrapBlazor.Components.Layout
+{
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
 
-        
-//    //    //IsAuthenticated = true;
-//    //    // Todo 这里以后要改
-//    //}
-//}
+
+        //IsAuthenticated = true;
+        //Todo 这里以后要改
+    }
+}

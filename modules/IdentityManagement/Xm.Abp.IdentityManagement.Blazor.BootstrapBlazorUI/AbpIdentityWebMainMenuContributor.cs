@@ -34,6 +34,11 @@ public class AbpIdentityWebMainMenuContributor : IMenuContributor
             l["Users"],
             url: "~/identity/users").RequirePermissions(IdentityPermissions.Users.Default));
 
+        identityMenuItem.AddItem(new ApplicationMenuItem(
+            IdentityMenuNames.Users,
+            "无效的404路由",
+            url: "~/identity/hao").RequirePermissions(IdentityPermissions.Users.Default));
+
         return Task.CompletedTask;
     }
 }
