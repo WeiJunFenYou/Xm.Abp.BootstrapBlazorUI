@@ -9,6 +9,8 @@
        IsBordered="true"
        ShowLoading="true"
        ShowExtendButtons="true"
+       ShowExtendEditButton="false"
+       ShowExtendDeleteButton="false"
        ShowDefaultButtons="false"
        IsExtendButtonsInRowHeader="true"
        OnQueryAsync="@OnQueryAsync">
@@ -27,7 +29,7 @@
                             if (action.ConfirmationMessage != null)
                             {
                                 var message = action.ConfirmationMessage.Invoke(context);
-                                <TableCellPopconfirmButton
+                                <TableCellPopConfirmButton
                                     Color="@(action.Color != null ? (Color)action.Color : Color.Primary)"
                                     Icon="@action.Icon"
                                     Text="@action.Text"
@@ -35,7 +37,7 @@
                                     OnConfirm="async () => await action.Clicked(context)"/>
                             }
                             else
-                            {
+                             {
                                 <TableCellButton
                                     Color="@(action.Color != null ? (Color)action.Color : Color.Primary)"
                                     Icon="@action.Icon"
