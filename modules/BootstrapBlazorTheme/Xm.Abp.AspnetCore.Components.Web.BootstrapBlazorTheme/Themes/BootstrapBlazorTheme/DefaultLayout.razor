@@ -1,9 +1,13 @@
-﻿@using Microsoft.Extensions.Options
+﻿@using Microsoft.Extensions.Logging
+@using Microsoft.Extensions.Options
 @using System.Reflection
+@using System.Diagnostics.CodeAnalysis
+@using Volo.Abp
 @using Xm.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme.Routing
 @using Xm.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme.Settings
 @inherits LayoutComponentBase
 @inject IOptions<AbpRouterOptions> RouterOptions
+@inject SwalService SwalService
 
 <Layout SideWidth="0" IsPage="true" IsFullSide="false" IsFixedHeader="true"
         ShowCollapseBar="false" OnCollapsed="collapsed => OnCollapse(collapsed)"
@@ -27,7 +31,9 @@
         }
     </Side>
     <Main>
-        @Body
+        <ErrorLogger OnErrorHandleAsync="OnErrorHandleAsync">
+            @Body
+        </ErrorLogger>
     </Main>
 </Layout>
 
@@ -38,3 +44,31 @@
         <link href="_content/Xm.Abp.AspnetCore.Components.Web.BootstrapBlazorTheme/libs/abp/css/motronic.css" rel="stylesheet" />
     }
 </HeadContent>
+
+@code
+{
+    private async Task OnErrorHandleAsync(ILogger logger, Exception ex)
+    {
+        if (ex is UserFriendlyException)
+        {
+            await SwalService.Show(new SwalOption
+                {
+                    Category = SwalCategory.Warning,
+                    Title = ex.Message,
+                });
+        }
+        else
+        {
+            //BootstrapBlazor弹窗函数
+            await SwalService.Show(new SwalOption
+                {
+                    Category = SwalCategory.Error,
+                    Title = "服务器内部错误",
+                    Content = ex.Message,
+                });
+
+            //Abp弹窗函数 Volo.Abp.AspNetCore.Components.Messages IUiMessageService MessageService
+            // await MessageService.Error(ex.Message, "服务器内部错误");
+        }
+    }
+}
