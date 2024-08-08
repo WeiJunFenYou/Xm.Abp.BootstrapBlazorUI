@@ -29,6 +29,9 @@ using Xm.Abp.TenantManagement.Blazor.Server.BootstrapBlazorUI;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace BookStore.Blazor;
 
@@ -203,7 +206,24 @@ public class BookStoreBlazorModule : AbpModule
 
         if (env.IsDevelopment())
         {
-            app.UseDeveloperExceptionPage();
+            //app.UseExceptionHandler("/Error");
+            //app.UseDeveloperExceptionPage();
+            app.UseExceptionHandler(a =>
+            {
+                a.Run(async context =>
+                {
+                    context.Response.StatusCode = 500; // 或者根据错误类型设置不同的状态码  
+                    //context.Response.Headers["Location"] = "/Error500";
+                    context.Response.ContentType = "text/html";
+
+                    // 这里可以构造一个错误页面的HTML字符串，或者重定向到错误页面组件  
+                    // 但由于Blazor的限制，我们不能直接重定向到另一个Blazor页面  
+                    // 因此，我们可以简单地返回一个包含错误信息的HTML字符串  
+                    string errorHtml = @"<meta http-equiv=""refresh"" content=""0;url=/Error500"">";
+
+                    await context.Response.WriteAsync(errorHtml).ConfigureAwait(false);
+                });
+            });
         }
         else
         {

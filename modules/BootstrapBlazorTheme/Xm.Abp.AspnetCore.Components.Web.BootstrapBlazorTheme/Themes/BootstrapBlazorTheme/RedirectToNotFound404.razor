@@ -1,0 +1,16 @@
+﻿@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+@code { 
+    protected override void OnInitialized()
+    {
+        if (JSRuntime is IJSInProcessRuntime)
+        {
+            Navigation.NavigateTo($"404?returnUrl={Uri.EscapeDataString(Navigation.Uri)}");
+        }
+        else
+        {
+            Navigation.NavigateTo($"404?returnUrl={Uri.EscapeDataString(Navigation.Uri)}", true);
+        }
+    } 
+}
