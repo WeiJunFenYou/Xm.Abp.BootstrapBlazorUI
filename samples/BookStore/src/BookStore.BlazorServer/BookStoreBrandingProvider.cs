@@ -7,4 +7,5 @@ namespace BookStore.Blazor;
 public class BookStoreBrandingProvider : DefaultBrandingProvider
 {
     public override string AppName => "BookStore";
+    public override string LogoUrl => "/favicon.ico";
 }

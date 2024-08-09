@@ -1,15 +1,18 @@
 ﻿@using Volo.Abp.Ui.Branding
 @inject IBrandingProvider BrandingProvider
 
-<div class="layout-banner">
+<div class="layout-banner" style="display: flex;place-items: center;">
     @if (!BrandingProvider.LogoUrl.IsNullOrWhiteSpace())
     {
-        <img class="layout-logo" src="@BrandingProvider.LogoUrl.TrimStart('/', '~')" alt="@BrandingProvider.AppName"/>
+        <img class="layout-logo"
+             src="@BrandingProvider.LogoUrl.TrimStart('/', '~')"
+             alt="@BrandingProvider.AppName"
+             style="height:42px; width:42px;" />
     }
     @if (!Collapsed)
     {
-        <div class="layout-title">
-            <span>@BrandingProvider.AppName</span>
+        <div class="layout-title" style="padding:3px;">
+            <span style="color:#E0E0E0;font-size:24px;">@BrandingProvider.AppName</span>
         </div>
     }
 </div>
