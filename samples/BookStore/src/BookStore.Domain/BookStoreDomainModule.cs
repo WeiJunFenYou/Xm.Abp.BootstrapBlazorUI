@@ -13,6 +13,8 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using EasyAbp.WeChatManagement.MiniPrograms;
+using EasyAbp.Abp.WeChat.Common.SharedCache.StackExchangeRedis;
 
 namespace BookStore;
 
@@ -27,7 +29,9 @@ namespace BookStore;
     typeof(AbpPermissionManagementDomainIdentityServerModule),
     typeof(AbpSettingManagementDomainModule),
     typeof(AbpTenantManagementDomainModule),
-    typeof(AbpEmailingModule)
+    typeof(AbpEmailingModule),
+    typeof(WeChatManagementMiniProgramsDomainModule),
+    typeof(AbpWeChatCommonSharedCacheStackExchangeRedisModule)
 )]
 public class BookStoreDomainModule : AbpModule
 {

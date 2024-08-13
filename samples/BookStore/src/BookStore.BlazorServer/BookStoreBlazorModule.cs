@@ -32,6 +32,8 @@ using Volo.Abp.UI.Navigation.Urls;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using EasyAbp.WeChatManagement.MiniPrograms;
+using EasyAbp.WeChatManagement.MiniPrograms.Web;
 
 namespace BookStore.Blazor;
 
@@ -47,7 +49,8 @@ namespace BookStore.Blazor;
     typeof(AbpAccountWebIdentityServerModule),
     typeof(AbpIdentityBlazorServerBootstrapBlazorModule),
     typeof(AbpTenantManagementBlazorServerBootstrapBlazorModule),
-    typeof(AbpSettingManagementBlazorServerBootstrapBlazorModule)
+    typeof(AbpSettingManagementBlazorServerBootstrapBlazorModule),
+    typeof(WeChatManagementMiniProgramsWebModule)
    )]
 public class BookStoreBlazorModule : AbpModule
 {
@@ -103,17 +106,17 @@ public class BookStoreBlazorModule : AbpModule
                     bundle.AddFiles("/global-styles.css");
                 }
             );
-            
+
             //BLAZOR UI
-             options.StyleBundles.Configure(
-                 BlazorBootstrapBlazorThemeBundles.Styles.Global,
-                 bundle =>
-                 {
-                     bundle.AddFiles("/blazor-global-styles.css");
-                     //You can remove the following line if you don't use Blazor CSS isolation for components
-                     bundle.AddFiles("/BookStore.BlazorServer.styles.css");
-                 }
-             );
+            options.StyleBundles.Configure(
+                BlazorBootstrapBlazorThemeBundles.Styles.Global,
+                bundle =>
+                {
+                    bundle.AddFiles("/blazor-global-styles.css");
+                    //You can remove the following line if you don't use Blazor CSS isolation for components
+                    bundle.AddFiles("/BookStore.BlazorServer.styles.css");
+                }
+            );
         });
     }
 

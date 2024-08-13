@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EasyAbp.WeChatManagement.Common.EntityFrameworkCore;
+using EasyAbp.WeChatManagement.MiniPrograms.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
@@ -62,6 +64,9 @@ public class BookStoreDbContext :
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.ConfigureWeChatManagementCommon();
+        builder.ConfigureWeChatManagementMiniPrograms();
+
         base.OnModelCreating(builder);
 
         /* Include modules to your migration db context */

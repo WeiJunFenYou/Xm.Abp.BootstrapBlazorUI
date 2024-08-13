@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EasyAbp.WeChatManagement.MiniPrograms;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
 using Volo.Abp.Authorization.Permissions;
@@ -196,6 +197,20 @@ public class IdentityServerDataSeedContributor : IDataSeedContributor, ITransien
                 requireClientSecret: false,
                 redirectUri: $"{swaggerRootUrl}/swagger/oauth2-redirect.html",
                 corsOrigins: new[] { swaggerRootUrl.RemovePostFix("/") }
+            );
+        }
+
+        // WeChat MiniProgram
+        var weChatMiniProgramPcLoginClientId =
+            configurationSection["WeChatManagementSample_WeChatMiniProgram:ClientId"];
+
+        if (!weChatMiniProgramPcLoginClientId.IsNullOrWhiteSpace())
+        {
+            await CreateClientAsync(
+                weChatMiniProgramPcLoginClientId,
+                commonScopes,
+                new[] { "refresh_token", WeChatMiniProgramConsts.GrantType },
+                (configurationSection["WeChatManagementSample_WeChatMiniProgram:ClientSecret"] ?? "1q2w3e*").Sha256()
             );
         }
     }

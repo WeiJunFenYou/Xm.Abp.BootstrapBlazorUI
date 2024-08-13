@@ -26,6 +26,7 @@
 		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="8.2.1" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="8.2.1" />
 		<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="8.2.1" />
+		<PackageReference Include="EasyAbp.WeChatManagement.MiniPrograms.Web" Version="3.1.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="Logs\**" />
