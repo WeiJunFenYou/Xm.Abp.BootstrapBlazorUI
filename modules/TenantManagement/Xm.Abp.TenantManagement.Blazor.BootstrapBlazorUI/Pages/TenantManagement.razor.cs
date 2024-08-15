@@ -11,6 +11,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.Localization;
+using BootstrapBlazor.Components;
 
 namespace Xm.Abp.TenantManagement.Blazor.BootstrapBlazorUI.Pages;
 
@@ -83,12 +84,14 @@ public partial class TenantManagement
                 new EntityAction
                 {
                     Text = L["Edit"],
+                    Icon = "fas fa-pen",
                     Visible = (data) => HasUpdatePermission,
                     Clicked = async (data) => { await OpenEditModalAsync(data.As<TenantDto>()); }
                 },
                 new EntityAction
                 {
                     Text = L["Features"],
+                    Icon = "fas fa-users-between-lines",
                     Visible = (data) => HasManageFeaturesPermission,
                     Clicked = async (data) =>
                     {
@@ -99,6 +102,8 @@ public partial class TenantManagement
                 new EntityAction
                 {
                     Text = L["Delete"],
+                    Color = Color.Danger,
+                    Icon = "fas fa-trash-can",
                     Visible = (data) => HasDeletePermission,
                     Clicked = async (data) => await DeleteEntityAsync(data.As<TenantDto>()),
                     ConfirmationMessage = (data) => GetDeleteConfirmationMessage(data.As<TenantDto>())

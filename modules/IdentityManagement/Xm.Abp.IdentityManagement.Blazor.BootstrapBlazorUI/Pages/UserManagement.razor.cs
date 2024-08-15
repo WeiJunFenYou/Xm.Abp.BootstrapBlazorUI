@@ -11,6 +11,7 @@ using Volo.Abp.AspNetCore.Components.Web.Extensibility.TableColumns;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.ObjectExtending;
+using BootstrapBlazor.Components;
 
 namespace Xm.Abp.IdentityManagement.Blazor.BootstrapBlazorUI.Pages;
 
@@ -23,7 +24,7 @@ public partial class UserManagement
     protected IReadOnlyList<IdentityRoleDto> Roles;
 
     protected AssignedRoleViewModel[] NewUserRoles;
-    
+
     protected AssignedRoleViewModel[] EditUserRoles;
 
     protected bool HasManagePermissionsPermission { get; set; }
@@ -31,7 +32,7 @@ public partial class UserManagement
     protected PageToolbar Toolbar { get; } = new();
 
     protected List<TableColumn> UserManagementTableColumns => TableColumns.Get<UserManagement>();
-    
+
     public UserManagement()
     {
         ObjectMapperContext = typeof(AbpIdentityBlazorBootstrapBlazorModule);
@@ -41,7 +42,7 @@ public partial class UserManagement
         UpdatePolicyName = IdentityPermissions.Users.Update;
         DeletePolicyName = IdentityPermissions.Users.Delete;
     }
-    
+
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
@@ -133,12 +134,14 @@ public partial class UserManagement
                     new EntityAction
                     {
                         Text = L["Edit"],
+                        Icon = "fas fa-pen",
                         Visible = (data) => HasUpdatePermission,
                         Clicked = async (data) => await OpenEditModalAsync(data.As<IdentityUserDto>())
                     },
                     new EntityAction
                     {
                         Text = L["Permissions"],
+                        Icon = "fas fa-users-between-lines",
                         Visible = (data) => HasManagePermissionsPermission,
                         Clicked = async (data) =>
                         {
@@ -149,6 +152,8 @@ public partial class UserManagement
                     new EntityAction
                     {
                         Text = L["Delete"],
+                        Color = Color.Danger,
+                        Icon = "fas fa-trash-can",
                         Visible = (data) => HasDeletePermission,
                         Clicked = async (data) => await DeleteEntityAsync(data.As<IdentityUserDto>()),
                         ConfirmationMessage = (data) => GetDeleteConfirmationMessage(data.As<IdentityUserDto>())

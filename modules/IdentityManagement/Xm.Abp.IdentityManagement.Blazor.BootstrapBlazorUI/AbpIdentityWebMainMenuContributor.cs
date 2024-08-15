@@ -27,17 +27,14 @@ public class AbpIdentityWebMainMenuContributor : IMenuContributor
         identityMenuItem.AddItem(new ApplicationMenuItem(
             IdentityMenuNames.Roles,
             l["Roles"],
-            url: "~/identity/roles").RequirePermissions(IdentityPermissions.Roles.Default));
+            url: "~/identity/roles",
+            icon: "fas fa-address-book").RequirePermissions(IdentityPermissions.Roles.Default));
 
         identityMenuItem.AddItem(new ApplicationMenuItem(
             IdentityMenuNames.Users,
             l["Users"],
-            url: "~/identity/users").RequirePermissions(IdentityPermissions.Users.Default));
-
-        identityMenuItem.AddItem(new ApplicationMenuItem(
-            IdentityMenuNames.Users,
-            "无效的404路由",
-            url: "~/identity/hao").RequirePermissions(IdentityPermissions.Users.Default));
+            url: "~/identity/users",
+            icon: "fas fa-user-large").RequirePermissions(IdentityPermissions.Users.Default));
 
         return Task.CompletedTask;
     }

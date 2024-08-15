@@ -29,7 +29,8 @@ public class TenantManagementBlazorMenuContributor : IMenuContributor
         tenantManagementMenuItem.AddItem(new ApplicationMenuItem(
             TenantManagementMenuNames.Tenants,
             l["Tenants"],
-            url: "~/tenant-management/tenants"
+            url: "~/tenant-management/tenants",
+            icon: "fa fa-users"
         ).RequirePermissions(TenantManagementPermissions.Tenants.Default));
 
         return Task.CompletedTask;

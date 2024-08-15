@@ -10,6 +10,7 @@ using Volo.Abp.AspNetCore.Components.Web.Extensibility.TableColumns;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.Localization;
 using Volo.Abp.ObjectExtending;
+using BootstrapBlazor.Components;
 
 namespace Xm.Abp.IdentityManagement.Blazor.BootstrapBlazorUI.Pages;
 
@@ -52,6 +53,7 @@ public partial class RoleManagement
                     new EntityAction
                     {
                         Text = L["Edit"],
+                        Icon = "fas fa-pen",
                         Visible = (data) => HasUpdatePermission,
                         Clicked = async (data) =>
                         {
@@ -61,6 +63,7 @@ public partial class RoleManagement
                     new EntityAction
                     {
                         Text = L["Permissions"],
+                        Icon = "fas fa-users-between-lines",
                         Visible = (data) => HasManagePermissionsPermission,
                         Clicked = async (data) =>
                         {
@@ -71,6 +74,8 @@ public partial class RoleManagement
                     new EntityAction
                     {
                         Text = L["Delete"],
+                        Color = Color.Danger,
+                        Icon = "fas fa-trash-can",
                         Visible = (data) => HasDeletePermission,
                         Clicked = async (data) => await DeleteEntityAsync(data.As<IdentityRoleDto>()),
                         ConfirmationMessage = (data) => GetDeleteConfirmationMessage(data.As<IdentityRoleDto>())
