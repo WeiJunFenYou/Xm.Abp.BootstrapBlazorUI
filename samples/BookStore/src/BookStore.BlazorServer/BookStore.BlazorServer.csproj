@@ -13,6 +13,7 @@
 		<PackageReference Include="Serilog.Sinks.Async" Version="2.0.0" />
 	</ItemGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\modules\Account\Xm.Abp.Account.Web.IdentityServer\Xm.Abp.Account.Web.IdentityServer.csproj" />
 		<ProjectReference Include="..\..\..\..\modules\BasicTheme\Xm.Abp.AspNetCore.Mvc.UI.Theme.Basic\Xm.Abp.AspNetCore.Mvc.UI.Theme.Basic.csproj" />
 		<ProjectReference Include="..\..\..\..\modules\IdentityManagement\Xm.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI\Xm.Abp.IdentityManagement.Blazor.Server.BootstrapBlazorUI.csproj" />
 		<ProjectReference Include="..\..\..\..\modules\BootstrapBlazorTheme\Xm.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme\Xm.Abp.AspnetCore.Components.Server.BootstrapBlazorTheme.csproj" />
@@ -25,7 +26,6 @@
 		<PackageReference Include="Volo.Abp.Swashbuckle" Version="8.2.1" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Authentication.JwtBearer" Version="8.2.1" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="8.2.1" />
-		<PackageReference Include="Volo.Abp.Account.Web.IdentityServer" Version="8.2.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Remove="Logs\**" />

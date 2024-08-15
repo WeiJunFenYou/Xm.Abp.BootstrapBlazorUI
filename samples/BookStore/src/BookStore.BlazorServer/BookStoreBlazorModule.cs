@@ -9,7 +9,7 @@ using BookStore.EntityFrameworkCore;
 using BookStore.Localization;
 using BookStore.MultiTenancy;
 using Volo.Abp;
-using Volo.Abp.Account.Web;
+using Xm.Abp.Account.Web;
 using Volo.Abp.AspNetCore.Authentication.JwtBearer;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.Localization;
