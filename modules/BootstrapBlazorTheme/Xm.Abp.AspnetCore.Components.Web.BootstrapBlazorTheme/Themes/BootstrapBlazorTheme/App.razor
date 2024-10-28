@@ -6,18 +6,26 @@
         <Router AppAssembly="RouterOptions.Value.AppAssembly"
                 AdditionalAssemblies="RouterOptions.Value.AdditionalAssemblies">
             <Found Context="routeData">
-                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(DefaultLayout)">
-                    <NotAuthorized>
-                        @if (!context.User.Identity.IsAuthenticated)
-                        {
-                            <RedirectToLogin />
-                        }
-                        else
-                        {
-                            <p>You are not authorized to access this resource.</p>
-                        }
-                    </NotAuthorized>
-                </AuthorizeRouteView>
+                @if (routeData.PageType.ToString().Contains("NoneLayout"))
+                {
+                    <RouteView RouteData="@routeData" />
+                }
+                else
+                {
+                    <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(DefaultLayout)">
+                        <NotAuthorized>
+                            @if (!context.User.Identity.IsAuthenticated)
+                            {
+                                <RedirectToLogin />
+                            }
+                            else
+                            {
+                                <p>You are not authorized to access this resource.</p>
+                            }
+                        </NotAuthorized>
+                    </AuthorizeRouteView>
+                }
+
             </Found>
             <NotFound>
                 <RedirectToNotFound404 />
